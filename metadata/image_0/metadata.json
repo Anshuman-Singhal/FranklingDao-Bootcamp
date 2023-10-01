@@ -1,0 +1,15 @@
+{
+	"attributes" : [
+    	{
+        	"trait_type" : "Tree",
+        	"value" : "Oak"
+    	},
+    	{
+        	"trait_type" : "Leaves",
+        	"value" : "Green"
+    	}
+	],
+	"description" : "An Oak Tree",
+	"image" : "ipfs://QmPd43RgimGxpbp8bTQ9LMKbLEMe8TCQThrzfnfJYh3CZo",
+	"name" : "Oak"
+}

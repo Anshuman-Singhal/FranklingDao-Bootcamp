@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract PennCoin is ERC20
 {
     constructor(uint256 initialSupply) ERC20("PennCoin", "PCN")
-    {n
-        _mint(msg.sender, intialSupply);
+    {
+        _mint(msg.sender, initialSupply);
     }
     
 }

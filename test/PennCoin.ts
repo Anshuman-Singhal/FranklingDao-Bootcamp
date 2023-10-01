@@ -5,6 +5,7 @@ import {
   import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
   import { expect } from "chai";
   import { ethers } from "hardhat";
+  const initialSupply = 1_000_000;
   
   describe("PennCoin", function () {
     async function deployPennCoinFixture() {
@@ -30,11 +31,9 @@ import {
   
                   expect(await pennCoin.balanceOf(owner.address)).to.equal(initialSupply);
               });
-      });
-  });
-  
-    describe("Transfer", function () {
-      it("Should transfer tokens from one account to another", async function () {
+
+      describe("Transfer", function () {
+        it("Should transfer tokens from one account to another", async function () {
         const { pennCoin, owner, otherAccount } = await loadFixture(deployPennCoinFixture);
   
         // Transfer 100 tokens from the owner to the other account.
@@ -64,7 +63,7 @@ import {
         expect(await pennCoin.allowance(owner.address, otherAccount.address)).to.equal(100);
       });
     });
-    
+
     describe("TransferFrom", function () {
       it("Should transfer tokens from one account to another using the allowance of the spender", async function () {
         const { pennCoin, owner, otherAccount } = await loadFixture(deployPennCoinFixture);
@@ -90,3 +89,5 @@ import {
       await expect(pennCoin.transferFrom(owner.address, otherAccount.address, 101)).to.be.revertedWith("ERC20: transfer amount exceeds allowance");
     });
   });
+});
+});
